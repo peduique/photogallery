@@ -1,6 +1,6 @@
 class Photo < ActiveRecord::Base
 
-	validates_presence_of :nome
+	validates_presence_of :title
 
 	has_attached_file :photo,
 		:path => ":rails_root/public/system/:class/:attachement/:id/:basename_:style.:extension",
