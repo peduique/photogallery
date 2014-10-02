@@ -1,0 +1,29 @@
+<h1>Imagens Cadastradas</h1>
+
+<p id="alert alert--success"><%= notice %></p>
+
+<div class="lista-imagens">
+	<% @images.each do |image| %>
+	<div class="item">
+		<div class="thumb">
+			<div class="centered">
+				<%= image_tag image.image_file.url(:thumb) %>
+			</div>
+		</div>
+		<div class="details">
+			<%= link_to edit_image_path(image) do %>
+				<i class="icon-pencil"></i>
+			<% end %>
+			<%= link_to image, method: :delete, data: { confirm: 'Deseja realmente excluir?' } do %>
+				<i class="icon-remove"></i>
+			<% end %>
+		</div>
+	</div>
+	<% end %>
+</div>
+
+<!-- <ul ng-repeat="image in images">
+	<li >{{image.nome}} - <a href="#" ng-click="deleteImage($index)">Remover</a></li>
+</ul> -->
+
+<%= link_to 'Cadastrar Nova', new_image_path, :class => "btn" %>
