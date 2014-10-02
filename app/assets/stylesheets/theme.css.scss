@@ -36,8 +36,12 @@ ul {
 	}
 }
 
-.btn {
+.button {
 	display: inline-block;
+	margin: 0 5px;
+	font-size: 13px;
+}
+.button-primary {
 	margin-top: 30px;
 	background: #5A7BC2;
 	color: #fff;
@@ -46,6 +50,14 @@ ul {
 	border-radius: 4px;
 	text-decoration: none;
 }
+.button-link {
+	color: #B20000;
+	text-decoration: none;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
 label {
 	display: inline-block;
 	max-width: 100%;
