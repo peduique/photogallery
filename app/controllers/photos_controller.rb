@@ -1,5 +1,9 @@
 class PhotosController < ApplicationController
 
+	def view
+		@photos = Photo.all
+	end
+
 	def index
 		respond_to do |format|
 			format.html { 
