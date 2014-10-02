@@ -1,0 +1,31 @@
+<%= form_for @photo, :html => { :multipart => true } do |f| %>
+
+<% if @photo.errors.any? %>
+	<div id="alert alert--danger">
+		<ul>
+			<% @photo.errors.full_messages.each do |message| %>
+				<li><%= message %></li>
+			<% end %>
+		</ul>
+	</div>
+<% end %>
+
+<p>
+	<%= f.label :nome, 'Nome da Imagem' %>
+	<%= f.text_field :title %>
+</p>
+
+<p>
+	<%= f.label :image_file %>
+	<%= f.file_field :image_file %>
+</p>
+<p>
+	<% if @photo.new_record? %> 
+		<%= f.submit "Cadastrar Imagem", :class => "btn" %>
+	<% else %>
+		<%= f.submit "Editar Imagem", :class => "btn" %>
+	<% end %>
+</p>
+
+<% end %>
+
