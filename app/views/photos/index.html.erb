@@ -1,12 +1,14 @@
 <h1>Imagens Cadastradas</h1>
 
-<p id="alert alert--success"><%= notice %></p>
+<% if flash[:notice] %>
+    <p class="alert alert-success"><%= flash[:notice] %></p>
+  <% end %>
 
 <div class="lista-imagens">
 	<% @photos.each do |photo| %>
 	<div class="item">
 		<div class="thumb">
-			<div class="centered">
+			<div class="center">
 				<%= image_tag photo.photo.url(:thumb) %>
 			</div>
 		</div>
