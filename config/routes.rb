@@ -3,11 +3,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'photos#index'
+  root 'photos#view'
 
-  resources :photos, :only => [:index, :view, :new, :create, :edit, :update ]
+  resources :photos, :only => [:index, :view, :new, :create, :edit, :update]
 
   get "/photos/view" => "photos#view"
+
+  get '/photos/:id' => "photos#destroy", as: :remove
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -42,6 +42,15 @@ class PhotosController < ApplicationController
 		end
 	end
 
+	def destroy
+		@photo = Photo.find(params[:id])
+		if @photo.present?
+			@photo.destroy
+			flash[:notice] = "Imagem excluída com sucesso"
+			redirect_to photos_url
+		end
+	end
+
 	private
 		def photo_params   
 			params.require(:photo).permit(:title, :url, :photo)
