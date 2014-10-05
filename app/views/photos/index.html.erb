@@ -1,26 +1,30 @@
 <h1>Imagens Cadastradas</h1>
 
 <% if flash[:notice] %>
-    <p class="alert alert-success"><%= flash[:notice] %></p>
-  <% end %>
+<p class="alert alert-success"><%= flash[:notice] %></p>
+<% end %>
 
 <div class="lista-imagens">
-	<% @photos.each do |photo| %>
-	<div class="item">
-		<div class="thumb">
-			<div class="center">
-				<%= image_tag photo.photo.url(:thumb) %>
-			</div>
-		</div>
-		<div class="details">
-			<%= link_to edit_photo_path(photo) do %>
-				<i class="icon-pencil"></i>
-			<% end %>
-			<%= link_to photo, method: :delete, data: { confirm: 'Deseja realmente excluir?' } do %>
-				<i class="icon-remove"></i>
-			<% end %>
-		</div>
-	</div>
+	<% if @photos.blank? %>
+		<p>Sem imagens cadastradas</p>
+	<% else %>
+		<% @photos.each do |photo| %>
+			<div class="item">
+				<div class="thumb">
+					<div class="center">
+						<%= image_tag photo.photo.url(:thumb) %>
+					</div>
+				</div>
+				<div class="details">
+					<%= link_to edit_photo_path(photo) do %>
+					<i class="icon-pencil"></i>
+					<% end %>
+					<%= link_to remove_path(photo), data: { confirm: 'Deseja realmente excluir?' } do %>
+						<i class="icon-remove"></i>
+					<% end %>
+				</div>
+			</div>	
+		<% end %>
 	<% end %>
 </div>
 
