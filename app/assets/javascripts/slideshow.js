@@ -1,8 +1,8 @@
 var Slider = (function() {
 
 	var current,
-		slides,
-		images;
+	slides,
+	images;
 
 	return {
 		initialize: function() {
@@ -18,7 +18,7 @@ var Slider = (function() {
 		navigation: function() {
 			navigation = document.getElementsByClassName('slideshow-nav')[0];
 			var prevSlide = navigation.querySelector('.prev-slide'),
-				nextSlide = navigation.querySelector('.next-slide');
+			nextSlide = navigation.querySelector('.next-slide');
 
 			prevSlide.addEventListener('click', function() {
 				if (current > 0) { 
@@ -32,6 +32,20 @@ var Slider = (function() {
 					Slider.play();
 				}
 			}, false);
+
+			document.onkeyup = function(e) {
+				if (event.keyCode == 37) {
+					if (current > 0) { 
+						current -= 2 
+						Slider.play();
+					} 
+
+				} else if (event.keyCode == 39) {
+					if ( ( current + 1 ) < slides ) {
+						Slider.play();
+					}
+				}
+			}
 		},
 
 		play: function() {
