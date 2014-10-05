@@ -24,14 +24,14 @@
 	<%= f.label :imagem %>
 	<%= f.file_field :photo %>
 </p>
-<p>
+<div class="form-action">
 	<% if @photo.new_record? %> 
 		<%= f.submit "Cadastrar Imagem", :class => "button button-primary"  %>
 	<% else %>
 		<%= f.submit "Editar Imagem", :class => "button button-primary"  %>
 	<% end %>
 	<%= link_to 'Voltar para listagem', photos_path, :class => "button button-link" %>
-</p>
+</div>
 
 <% end %>
 

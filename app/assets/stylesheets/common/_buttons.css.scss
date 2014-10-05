@@ -1,0 +1,36 @@
+.button {
+	display: inline-block;
+	margin: 0 5px;
+	padding: 10px 20px;
+	font-size: 13px;
+	border: 0;
+	text-decoration: none;
+	.details & {
+		padding: 6px 8px;
+		margin: 0 0 2px 0;
+	}
+}
+
+.button-primary {
+	background: $secondary-color;
+	color: #fff;
+	&:hover {
+		background: $principal-color;
+	}
+}
+
+.button-delete {
+	background: #B20000;
+	color: #fff;
+	&:hover {
+		background: #B21332;
+	}
+}
+
+.button-link {
+	color: #B20000;
+	&:hover {
+		color: #B21332;
+		text-decoration: underline;
+	}
+}

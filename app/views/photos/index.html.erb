@@ -4,7 +4,7 @@
 <p class="alert alert-success"><%= flash[:notice] %></p>
 <% end %>
 
-<div class="lista-imagens">
+<div class="list-images">
 	<% if @photos.blank? %>
 		<p>Sem imagens cadastradas</p>
 	<% else %>
@@ -16,10 +16,10 @@
 					</div>
 				</div>
 				<div class="details">
-					<%= link_to edit_photo_path(photo) do %>
-					<i class="icon-pencil"></i>
+					<%= link_to edit_photo_path(photo), :class => 'button button-primary' do %>
+						<i class="icon-pencil"></i>
 					<% end %>
-					<%= link_to remove_path(photo), data: { confirm: 'Deseja realmente excluir?' } do %>
+					<%= link_to remove_path(photo), data: { confirm: 'Deseja realmente excluir?' }, :class => 'button button-delete' do %>
 						<i class="icon-remove"></i>
 					<% end %>
 				</div>
@@ -28,4 +28,6 @@
 	<% end %>
 </div>
 
-<%= link_to 'Cadastrar Nova', new_photo_path, :class => "button button-primary" %>
+<div class="form-action">
+	<%= link_to 'Cadastrar Nova', new_photo_path, :class => "button button-primary" %>
+</div>
