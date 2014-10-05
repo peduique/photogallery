@@ -1,13 +1,17 @@
+@import 'common/header';
+@import 'common/buttons';
+@import 'common/forms';
+@import 'common/typography';
+
+@import 'components/slide';
+@import 'components/alerts';
+
 body {
 	background: #F2F4F8;
 }
 
 * {
 	box-sizing: border-box;
-}
-
-ul {
-	padding: 0;
 }
 
 .container {
@@ -22,63 +26,6 @@ ul {
 	background: #fff;
 }
 
-.header {
-	width: 100%;
-	background: #222A38;
-	padding: 10px 0;
-	li {
-		display: inline-block;
-	}
-	a {
-		color: #fff;
-		text-decoration: none;
-		padding: 0 10px;
-	}
-}
-
-.button {
-	display: inline-block;
-	margin: 0 5px;
-	font-size: 13px;
-}
-.button-primary {
-	margin-top: 30px;
-	background: #5A7BC2;
-	color: #fff;
-	padding: 10px 20px;
-	border: 0;
-	border-radius: 4px;
-	text-decoration: none;
-}
-.button-link {
-	color: #B20000;
-	text-decoration: none;
-	&:hover {
-		text-decoration: underline;
-	}
-}
-
-label {
-	display: inline-block;
-	max-width: 100%;
-	margin-bottom: 5px;
-	font-weight: bold;
-	color: #666;
-	font-size: 13px
-}
-input {
-	display: block;
-}
-
-h1 {
-	color: #58719C;
-	margin: 0.2em 0;
-}
-h2 {
-	color: #555;
-	margin: 0 0 2em;
-	font-size: 16px;
-}
 
 .lista-imagens {
 	overflow-x: hidden;
@@ -109,7 +56,7 @@ h2 {
 		width: 134px;
 		height: 134px;
 	}
-	.centered {
+	.center {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -143,4 +90,20 @@ h2 {
 		display: inline-flex;
 		border-radius: 3px;
 	}
+}
+
+
+.skip a {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.skip a:focus { 
+	position: static; 
+	width: auto; 
+	height: auto; 
 }

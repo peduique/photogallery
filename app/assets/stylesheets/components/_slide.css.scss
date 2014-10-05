@@ -1,0 +1,49 @@
+.slideshow {
+	position: relative;
+}
+.slider {
+	width: 640px;
+	height: 480px;
+	overflow: hidden;
+	display: block;
+	margin: 0 auto;
+}
+.slide {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	opacity: 1.0;
+	transition: all 0.6s ease;
+	&.hide {
+		opacity: 0.0;
+		z-index: -1;
+	}
+}
+.slideshow-nav {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	margin-top: -50px;
+}
+.slide-button {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	text-indent: -9999px;
+	display: block;
+	cursor: pointer;
+}
+.prev-slide {
+	background: url(seta_esquerda.jpg);
+	left: 50px;
+}
+.next-slide {
+	background: url(seta_direita.jpg);
+	right: 50px;
+}
+
+.slider-position {
+	text-align: center;
+	display: block;
+	margin-top: 10px;
+}

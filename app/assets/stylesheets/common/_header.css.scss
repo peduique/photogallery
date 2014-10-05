@@ -1,0 +1,21 @@
+.header {
+	width: 100%;
+	background: #222A38;
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+	li {
+		display: inline-block;
+	}
+	a {
+		color: #FFF;
+		text-decoration: none;
+		padding: 20px 17px;
+		display: block;
+		font-size: 14px;
+		&:hover {
+			background: rgba(255,255,255,.1);
+		}
+	}
+}
