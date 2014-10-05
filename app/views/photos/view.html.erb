@@ -1,21 +1,20 @@
 <h1>Galeria</h1>
 
-<div class="lista-imagens">
-	<% @photos.each do |photo| %>
-	<div class="item">
-		<div class="thumb">
-			<div class="centered">
-				<%= image_tag photo.photo.url(:thumb) %>
-			</div>
-		</div>
-		<div class="details">
-			<%= link_to edit_photo_path(photo) do %>
-				<i class="icon-pencil"></i>
-			<% end %>
-			<%= link_to photo, method: :delete, data: { confirm: 'Deseja realmente excluir?' } do %>
-				<i class="icon-remove"></i>
-			<% end %>
-		</div>
+<div class="slideshow">
+	<div class="slider">
+		<% @photos.each do |photo| %>
+		<figure class="slide">
+			<%= image_tag photo.photo.url(:banner) %>
+		</figure>
+		<% end %>
 	</div>
-	<% end %>
+	<aside class="slideshow-nav" id="slideshow-nav">
+		<span class="slide-button prev-slide">❮</span>
+		<span class="slide-button next-slide">❯</span>
+	</aside>
+	<span class="slider-position"></span>
 </div>
+
+<script>
+	Slider.initialize();
+</script>
