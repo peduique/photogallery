@@ -1,7 +1,7 @@
 <%= form_for @photo, :html => { :multipart => true } do |f| %>
 
 <% if @photo.errors.any? %>
-	<div id="alert alert--danger">
+	<div class="alert alert-warning">
 		<ul>
 			<% @photo.errors.full_messages.each do |message| %>
 				<li><%= message %></li>
@@ -11,11 +11,14 @@
 <% end %>
 
 <p>
-	<%= f.label :nome, 'Nome da Imagem' %>
+	<%= f.label :nome, 'Referência da Imagem' %>
 	<%= f.text_field :title %>
 </p>
 <% if @photo.photo? %>
-	<%= image_tag @photo.photo.url(:thumb) %>
+	<p>
+		<label>Foto atual</label>
+		<%= image_tag @photo.photo.url(:thumb) %>
+	</p>
 <% end %>
 <p>
 	<%= f.label :imagem %>
