@@ -1,13 +1,13 @@
-Photo Gallery
-===========================
+# Photo Gallery
 
 Utiliza as seguintes tecnologias:
 
-	Ruby on Rails
-	MySQL
-	JavaScript
-	
-Executando a aplicação
-=======================
+```
+Ruby on Rails
+MySQL
+JavaScript
+````	
 
-Após o download, acesse a pasta da aplicação e execute o comando **make run**, esse comando instalará todas as dependências e na finalização rodará o projeto. Com o projeto iniciado, abra um navegador e acesse o link http://localhost:3000/
+## Executando a aplicação
+
+Após o download, acesse a pasta da aplicação e execute o comando **make run**, esse comando instalará todas as dependências e na finalização rodará o projeto. Com o projeto iniciado, abra um navegador e acesse o link [http://localhost:3000/](http://localhost:3000/)
