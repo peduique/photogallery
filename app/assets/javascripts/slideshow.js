@@ -20,30 +20,33 @@ var Slider = (function() {
 			var prevSlide = navigation.querySelector('.prev-slide'),
 			nextSlide = navigation.querySelector('.next-slide');
 
-			prevSlide.addEventListener('click', function() {
+			function prev() {
 				if (current > 0) { 
 					current -= 2 
 					Slider.play();
 				} 
-			}, false);
+			}
 
-			nextSlide.addEventListener('click', function() {
+			function next() {
 				if ( ( current + 1 ) < slides ) {
 					Slider.play();
 				}
+			}
+
+			prevSlide.addEventListener('click', function() {
+				prev();
+			}, false);
+
+			nextSlide.addEventListener('click', function() {
+				next();
 			}, false);
 
 			document.onkeyup = function(e) {
-				if (event.keyCode == 37) {
-					if (current > 0) { 
-						current -= 2 
-						Slider.play();
-					} 
+				if (e.keyCode == 37) {
+					prev();
 
-				} else if (event.keyCode == 39) {
-					if ( ( current + 1 ) < slides ) {
-						Slider.play();
-					}
+				} else if (e.keyCode == 39) {
+					next();
 				}
 			}
 		},
